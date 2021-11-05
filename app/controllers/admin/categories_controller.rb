@@ -1,6 +1,6 @@
 class Admin::CategoriesController < ApplicationController
   
-  before_action: set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def index
     @categories = Category.all
@@ -26,10 +26,10 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def update
-    if @category.update(params_category
+    if @category.update(params_category)
       redirect_to admin_categories_path
     else
-      render : edit
+      render :edit
     end
   end
 
