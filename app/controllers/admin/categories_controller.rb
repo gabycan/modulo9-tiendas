@@ -19,7 +19,7 @@ class Admin::CategoriesController < ApplicationController
 
   def create
     @category = Category.new(params_category)
-    if @category
+    if @category.save
       redirect_to admin_categories_path
     else
       render :new
@@ -47,6 +47,10 @@ class Admin::CategoriesController < ApplicationController
 
   def set_category
     @category = Category.find(params[:id])
+  rescue
+    #el flash es como el mensajero de rails
+    flash[:set_category_error] = "no pudo encontrar el registro #{params[:id]}"
+    redirect_to admin_categories_path
   end
 
 end
