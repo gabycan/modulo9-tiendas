@@ -55,7 +55,7 @@ class Admin::RolesController < ApplicationController
   def set_role
     @role = Role.find(params[:id])
   rescue
-    flash[:set_rol_error] = "no pudo encontrar el registro #{params[:id]}"
+    flash[:set_role_error] = "no pudo encontrar el registro #{params[:id]}"
     redirect_to admin_roles_path
   end
 end
