@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
-    # get 'statuses',              to: 'statuses#index',       as: 'statuses'
-    # get 'statuses/new',          to: 'statuses#new',         as: 'new_status'
-    # get 'statuses/:id',          to: 'statuses#show',        as: 'status'
-    # get 'statuses/:id/edit',     to: 'statuses#edit',        as: 'edit_status'
+#     get 'statuses',              to: 'statuses#index',       as: 'statuses'
+#     get 'statuses/new',          to: 'statuses#new',         as: 'new_status'
+#     get 'statuses/:id',          to: 'statuses#show',        as: 'status'
+#     get 'statuses/:id/edit',     to: 'statuses#edit',        as: 'edit_status'
 
-    # post 'statuses',              to: 'statuses#create'
-    # put 'statuses/:id',           to: 'statuses#update'
-    # patch 'statuses/:id',         to: 'statuses#update'
-    # delete 'statuses/:id',        to: 'statuses#destroy'
+#     post 'statuses',              to: 'statuses#create'
+#     put 'statuses/:id',           to: 'statuses#update'
+#     patch 'statuses/:id',         to: 'statuses#update'
+#     delete 'statuses/:id',        to: 'statuses#destroy'
 
 #     get 'orders',               to: 'orders#index',       as: 'orders'
 #     get 'orders/new',           to: 'orders#new',         as: 'new_order'
