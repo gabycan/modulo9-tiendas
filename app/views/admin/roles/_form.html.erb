@@ -1,0 +1,9 @@
+<% form_with(model: [:admin, base_role]) do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <% if base_role.erros[:name].any? %>
+        <div>
+            <%= base_role.errors[:name].first %>
+        </div>
+    <% end %>
+<% end %>
