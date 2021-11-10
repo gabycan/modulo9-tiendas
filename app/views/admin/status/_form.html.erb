@@ -1,0 +1,17 @@
+
+
+<% form_with(model: [:admin base_status]) do |form| %>
+
+    <div class="mb-3">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+        <%if base_status.errors[:name].any? %>
+            <div>
+                <%= base_status_errors[:name].first %>
+            </div>
+        <% end %>
+    </div>
+
+    <%= form.submit %>
+
+<% end %>
