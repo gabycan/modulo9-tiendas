@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
     get 'pages/home'
+  
+  namespace :admin do
+
     get 'statuses',              to: 'statuses#index',       as: 'statuses'
     get 'statuses/new',          to: 'statuses#new',         as: 'new_status'
     get 'statuses/:id',          to: 'statuses#show',        as: 'status'
@@ -31,7 +34,6 @@ Rails.application.routes.draw do
 #     patch  'users/:id',         to: 'users#update'
 #     delete 'users/:id',         to: 'users#destroy'
 
-  namespace :admin do
     get 'roles',                to: 'roles#index',        as: 'roles'
     get 'roles/new',            to: 'roles#new',          as: 'new_role'
     get 'roles/:id',            to: 'roles#show',         as: 'role'
@@ -42,15 +44,15 @@ Rails.application.routes.draw do
     patch  'roles/:id',         to: 'roles#update'
     delete 'roles/:id',         to: 'roles#destroy'
 
-    # get 'products',             to: 'products#index',     as: 'products'
-    # get 'products/new',         to: 'products#new',       as: 'new_product'
-    # get 'products/:id',         to: 'products#show',      as: 'product'
-    # get 'products/:id/edit',    to: 'products#edit',      as: 'edit_product'
+    get 'products',             to: 'products#index',     as: 'products'
+    get 'products/new',         to: 'products#new',       as: 'new_product'
+    get 'products/:id',         to: 'products#show',      as: 'product'
+    get 'products/:id/edit',    to: 'products#edit',      as: 'edit_product'
 
-    # post   'products',          to: 'products#create'
-    # put    'products/:id',      to: 'products#update'
-    # patch  'products/:id',      to: 'products#update'
-    # delete 'products/:id',      to: 'products#destroy'
+    post   'products',          to: 'products#create'
+    put    'products/:id',      to: 'products#update'
+    patch  'products/:id',      to: 'products#update'
+    delete 'products/:id',      to: 'products#destroy'
 
     get 'categories',           to: 'categories#index',   as: 'categories'
     get 'categories/new',       to: 'categories#new',     as: 'new_category'
