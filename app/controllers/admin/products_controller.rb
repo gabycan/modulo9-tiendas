@@ -5,12 +5,14 @@ class Admin::ProductsController < ApplicationController
 
   #GET /products
   def index
-    @products = Product.all
+    #@products = Product.all #problema n+1
+    @products = Product.includes(:category)
   end
 
   #GET /product/new
   def new
     @products = Product.new
+    set_categories
   end
 
   #GET /product/:id
@@ -19,6 +21,7 @@ class Admin::ProductsController < ApplicationController
 
   #GET /product/:id/edit
   def edit
+    set_categories
   end
 
   #POST /product

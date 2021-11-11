@@ -1,2 +1,7 @@
-<h1>Admin::Products#show</h1>
-<p>Find me in app/views/admin/products/show.html.erb</p>
+<h1> <%= @product_name %> </h1>
+
+<ul>
+    <li> <%= @product.price %> </li>
+    <li> <%= @product.description %> </li>
+    <li> <%= @product.category_name %> </li>
+</ul>

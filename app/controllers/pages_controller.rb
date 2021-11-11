@@ -1,14 +1,20 @@
 class PagesController < ApplicationController
-
   # def home
   #     cookies[:mi_primera_cookie] = "Hola mundo"
   # end
-
+    
   def home
-      if cookies.signed[:mi_primera_cookie]
-          puts cookies.signed[:mi_primera_cookie]
+      
+      if cookies[:plana]
+          puts cookies[:plana]
       else
-          cookies.signed[:mi_primera_cookie] = "Hola mundo FIRMADO 🍕"
+          cookies[:plana] = "COOKIE PLANA 🧀"
+      end
+
+      if cookies.signed[:firmada]
+          puts cookies.signed[:firmada]
+      else
+          cookies.signed[:firmada] = "Hola mundo FIRMADO 🍕"
       end
       
       if cookies.encrypted[:encriptada]
@@ -16,7 +22,13 @@ class PagesController < ApplicationController
       else
           cookies.encrypted[:encriptada] = "TEXTO SECRETO 🧀"
       end
-  end
+
+      if session[:variable_sesion]
+        puts session[:variable_sesion]
+      else
+        session[:variable_session] = "EN LA SESION 🥓"
+      end
+    end
 
   def home
       #1. Preguntar si existe la variable cookies[:cart_id]

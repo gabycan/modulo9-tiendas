@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
 
-    get 'pages/home'
-  
-  namespace :admin do
+    get 'carts/home'
+    
+    #pages
+    root 'pages#home'
+    get '/cart', to: 'pages#cart', as: 'cart'
 
+    #Carts
+    post '/carts/:id_product', to: 'carts#add_product', as: 'add_product_to_cart' 
+
+  namespace :admin do
+    #Categories
+    #VERB URI                           RESPONSABLE                ALIAS
     get 'statuses',              to: 'statuses#index',       as: 'statuses'
     get 'statuses/new',          to: 'statuses#new',         as: 'new_status'
     get 'statuses/:id',          to: 'statuses#show',        as: 'status'
