@@ -1,1 +1,21 @@
-<div>
+<div class="card w-100">
+    <%= if base_product.main_photo.attached? %>
+        <%= image_tag base_product.main, class: 'card-img-top' %>
+    <% end %>
+    <div class="card-body">
+        <h5>
+            <%= base_product.name %>
+        </h5>
+        <h6 class="text-muted">
+            <%= base_product.category.name %>
+        </h6>
+        <p>
+            <%= base_product.description %>
+        </p>
+
+        <%= link_to add_product_to_card_path(base_product), method: :post, class %>
+            <i class="bi bi-cart-plus"></i>
+            <%= base_product.price %> CLP
+        <% end %>
+    </div>
+</div>

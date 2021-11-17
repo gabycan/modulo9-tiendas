@@ -15,7 +15,7 @@ Status.create([
 ])
 puts "💾 Statuses loaded!"
 
-#save data for Categoriy
+#save data for Category
 Category.create([
     { name: 'Beauty' },
     { name: 'Shoes' },
@@ -36,6 +36,6 @@ User.create([
 puts "💾 Users loaded!"
 
 25.times do
-    Product.create(name: :Faker::Food.dish, description: :Faker::Food.description, price: rand(10000..30000), category: @categories.sample)
+    Product.create(name: Faker::Food.dish, description: Faker::Food.description, price: rand(10000..40000), category: @categories.sample)
 end
 puts "💾 Products loaded!"

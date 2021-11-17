@@ -31,6 +31,14 @@
                 <% end %>
             </div>
             <div class="mb-3">
+                <%= form.label :main_photo, class: 'form-label' %>
+                <%= form.file_field :main_photo, class: 'form-control' %>
+            </div>
+            <div class="mb-3">
+                <%= form.label :detail_photos, class: 'form-label' %>
+                <%= form.file_field :detail_photos, multiple: true, class: 'form-control' %>
+            </div>
+            <div class="mb-3">
                 <%= form.label :category_id, class: 'form-label' %>
                 <%= form.text_field :category_id 
                 options_from_collection_for_select(@categories, :id, :name, base_product.category_id),

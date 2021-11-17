@@ -52,7 +52,7 @@ class Admin::ProductsController < ApplicationController
   private
 
   def params_product
-    params.require(:product).permit(:description)
+    params.require(:product).permit(:name, :price, :description, :category_id, :main_photo, detail_photos: [])
   end
 
   def set_product
@@ -61,4 +61,7 @@ class Admin::ProductsController < ApplicationController
     flash[:set_product_error] = "no pudo encontrar el registro #{params[:id]}"
   end
 
+  def set_categories
+  
+  end
 end
