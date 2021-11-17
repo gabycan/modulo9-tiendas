@@ -16,7 +16,12 @@ class PagesController < ApplicationController
       
       #2. Mostrar la cantidad de productos en el carrito
       
-      @products = Product.all.shuffle
+      #@products = Product.all.shuffle #problema N+1
+      @products = Product.includes(:category).shuffle
+  end
+
+  def cart
+
   end
   
 end

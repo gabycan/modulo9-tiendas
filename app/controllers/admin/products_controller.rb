@@ -5,7 +5,7 @@ class Admin::ProductsController < ApplicationController
 
   #GET /products
   def index
-    #@products = Product.all #problema n+1
+    #@products = Product.all #problema N+1
     @products = Product.includes(:category)
   end
 
