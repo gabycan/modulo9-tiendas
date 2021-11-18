@@ -16,7 +16,7 @@ Status.create([
 puts "💾 Statuses loaded!"
 
 #save data for Category
-Category.create([
+@categories = Category.create([
     { name: 'Beauty' },
     { name: 'Shoes' },
     { name: 'Technology' },
